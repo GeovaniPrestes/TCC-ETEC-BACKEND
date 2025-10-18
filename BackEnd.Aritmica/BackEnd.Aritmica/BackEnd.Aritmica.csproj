@@ -9,19 +9,25 @@
   <ItemGroup>
     <PackageReference Include="Autofac" Version="8.4.0" />
     <PackageReference Include="Dapper" Version="2.1.66" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="9.0.10" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="Npgsql" Version="9.0.4" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
     <PackageReference Include="RestSharp.Serializers.NewtonsoftJson" Version="112.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.6" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.14.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Logs\Services\Interfaces\" />
     <Folder Include="Features\Person\Injection\" />
     <Folder Include="Features\Person\Repositories\" />
     <Folder Include="Features\Person\Services\" />
-    <Folder Include="Features\Utils\" />
+    <Folder Include="Utils\" />
   </ItemGroup>
 
 </Project>

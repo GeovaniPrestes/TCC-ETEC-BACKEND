@@ -1,0 +1,107 @@
+﻿using BackEnd.Aritmica.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+
+namespace BackEnd.Aritmica.Migrations
+{
+    [DbContext(typeof(AppDbContext))]
+    internal partial class AppDbContextModelSnapshot : ModelSnapshot
+    {
+        protected override void BuildModel(ModelBuilder modelBuilder)
+        {
+#pragma warning disable 612, 618
+            modelBuilder
+                .HasAnnotation("ProductVersion", "9.0.10")
+                .HasAnnotation("Relational:MaxIdentifierLength", 63);
+
+            modelBuilder.UseIdentityByDefaultColumns();
+
+            modelBuilder.Entity("BackEnd.Aritmica.Data.Entities.Person", b =>
+                {
+                    b.Property<int>("IdPerson")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    b.Property<int>("IdPerson").UseIdentityByDefaultColumn();
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime>("BirthdayDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(8)
+                        .HasColumnType("character varying(8)");
+
+                    b.Property<string>("EmailPerson")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("LastLogin")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("NamePerson")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("NickName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("PasswordPerson")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("PhoneNumberPerson")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("ProfilePic")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("RegistrationDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("TypePerson")
+                        .HasColumnType("integer");
+
+                    b.HasKey("IdPerson");
+
+                    b.ToTable("Person");
+
+                    b.HasDiscriminator().HasValue("Person");
+
+                    b.UseTphMappingStrategy();
+                });
+
+            modelBuilder.Entity("BackEnd.Aritmica.Data.Entities.Student", b =>
+                {
+                    b.HasBaseType("BackEnd.Aritmica.Data.Entities.Person");
+
+                    b.Property<int>("LastClassViewed")
+                        .HasColumnType("integer");
+
+                    b.HasDiscriminator().HasValue("Student");
+                });
+
+            modelBuilder.Entity("BackEnd.Aritmica.Data.Entities.Teacher", b =>
+                {
+                    b.HasBaseType("BackEnd.Aritmica.Data.Entities.Person");
+
+                    b.PrimitiveCollection<int[]>("AppliedDiciplines")
+                        .IsRequired()
+                        .HasColumnType("integer[]");
+
+                    b.Property<string>("Curriculum")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasDiscriminator().HasValue("Teacher");
+                });
+#pragma warning restore 612, 618
+        }
+    }
+}

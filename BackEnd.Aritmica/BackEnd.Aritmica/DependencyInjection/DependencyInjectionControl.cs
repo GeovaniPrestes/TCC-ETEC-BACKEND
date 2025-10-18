@@ -15,8 +15,9 @@ namespace BackEnd.Aritmica.DependencyInjection
                 RegistryDependenciesWithoutLoadData(containerBuilder);
                 BuildContainer(containerBuilder);
             }
-            catch
+            catch (Exception exception)
             {
+                // ignored
             }
         }
 

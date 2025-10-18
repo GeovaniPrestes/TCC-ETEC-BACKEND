@@ -1,4 +1,7 @@
 ﻿using Autofac;
+using BackEnd.Aritmica.Connection;
+using BackEnd.Aritmica.Connection.Interfaces;
+using BackEnd.Aritmica.Data;
 
 namespace BackEnd.Aritmica.DependencyInjection
 {
@@ -9,9 +12,11 @@ namespace BackEnd.Aritmica.DependencyInjection
             try
             {
 
+                containerBuilder.RegisterType<ConnectionFactory>().As<IConnectionFactory>();
             }
             catch (Exception exception)
             {
+                // ignored
             }
         }
     }

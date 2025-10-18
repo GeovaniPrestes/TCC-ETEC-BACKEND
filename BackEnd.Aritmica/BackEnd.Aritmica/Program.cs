@@ -1,6 +1,9 @@
+using BackEnd.Aritmica.Data;
 using BackEnd.Aritmica.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting.WindowsServices;
 using Microsoft.OpenApi.Models;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
 
 var webApplicationOptions = new WebApplicationOptions
 {
@@ -9,6 +12,10 @@ var webApplicationOptions = new WebApplicationOptions
 };
 
 var builder = WebApplication.CreateBuilder(webApplicationOptions);
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
