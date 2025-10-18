@@ -1,6 +1,6 @@
 ﻿namespace BackEnd.Aritmica.Features.Person.Enums
 {
-    public enum PersonType
+    public enum PersonTypeEnum
     {
         Admin = 0,
         Student = 1,

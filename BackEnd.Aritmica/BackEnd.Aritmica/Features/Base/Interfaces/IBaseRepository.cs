@@ -6,8 +6,8 @@ namespace BackEnd.Aritmica.Features.Base.Interfaces
     {
         bool Create(IDbTransaction dbTransaction, object baseObject, string sql);
         bool Update(IDbTransaction dbTransaction, object baseObject, string sql);
-        T ReturnDetails(IDbConnection dbConnection, string sql);
-        IList<T> ReturnList(IDbConnection dbConnection, string sql);
-        bool Remove(IDbTransaction dbTransaction, int id, string sql);
+        T GetDetails(IDbConnection dbConnection, string sql);
+        IList<T> GetList(IDbConnection dbConnection, string sql);
+        bool RemoveById(IDbTransaction dbTransaction, int id, string sql);
     }
 }
