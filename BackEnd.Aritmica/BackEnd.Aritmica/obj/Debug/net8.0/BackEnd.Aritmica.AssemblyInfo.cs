@@ -14,10 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BackEnd.Aritmica")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6c64c5c5f8ee877da8ec25511dc66319a182d87")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5be07dbef0e99c56b761c32b0ca94bbfb958e677")]
 [assembly: System.Reflection.AssemblyProductAttribute("BackEnd.Aritmica")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BackEnd.Aritmica")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
-
-// Gerado pela classe WriteCodeFragment do MSBuild.
-
