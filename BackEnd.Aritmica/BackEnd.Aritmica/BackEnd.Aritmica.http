@@ -1,0 +1,6 @@
+@BackEnd.Aritmica_HostAddress = http://localhost:5113
+
+GET {{BackEnd.Aritmica_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
