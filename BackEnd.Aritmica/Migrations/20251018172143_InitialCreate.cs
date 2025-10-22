@@ -1,8 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-#nullable disable
-
 namespace BackEnd.Aritmica.Migrations
 {
     public partial class InitialCreate : Migration
@@ -26,10 +24,7 @@ namespace BackEnd.Aritmica.Migrations
                     LastLogin = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     Active = table.Column<bool>(type: "boolean", nullable: false),
                     ProfilePic = table.Column<string>(type: "text", nullable: false),
-                    Discriminator = table.Column<string>(type: "character varying(8)", maxLength: 8, nullable: false),
-                    LastClassViewed = table.Column<int>(type: "integer", nullable: true),
-                    Curriculum = table.Column<string>(type: "text", nullable: true),
-                    AppliedDiciplines = table.Column<int[]>(type: "integer[]", nullable: true)
+                    Discriminator = table.Column<string>(type: "character varying(8)", maxLength: 8, nullable: false)
                 },
                 constraints: table =>
                 {
