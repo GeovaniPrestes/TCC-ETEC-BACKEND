@@ -36,7 +36,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Person\Injection\" />
     <Folder Include="Features\Person\Services\Interfaces\" />
     <Folder Include="Utils\" />
   </ItemGroup>

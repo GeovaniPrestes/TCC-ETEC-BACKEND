@@ -6,7 +6,7 @@ namespace BackEnd.Aritmica.Features.Person.Repositories.Interfaces;
 public interface IStudentRepository
 {
     bool SaveStudent(IDbTransaction dbTransaction, StudentModel student);
-    IList<StudentModel> ListStudents(IDbConnection dbConnection);
+    IEnumerable<StudentModel> GetStudents(IDbConnection dbConnection);
     bool DeactiveStudent(IDbTransaction dbTransaction, int idStudent);
-    StudentModel ReturnStudent(IDbConnection dbConnection, int idStudent);
+    StudentModel GetStudent(IDbConnection dbConnection, int idPerson);
 }
