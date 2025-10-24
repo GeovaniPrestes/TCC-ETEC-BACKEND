@@ -1,7 +1,7 @@
 ﻿using Autofac;
-using BackEnd.Aritmica.Connection;
 using BackEnd.Aritmica.Connection.Interfaces;
 using BackEnd.Aritmica.Data;
+using BackEnd.Aritmica.Features.Person.Injection;
 
 namespace BackEnd.Aritmica.DependencyInjection
 {
@@ -11,8 +11,8 @@ namespace BackEnd.Aritmica.DependencyInjection
         {
             try
             {
-
                 containerBuilder.RegisterType<ConnectionFactory>().As<IConnectionFactory>();
+                containerBuilder.RegisterModule<PersonInjection>();
             }
             catch (Exception exception)
             {
