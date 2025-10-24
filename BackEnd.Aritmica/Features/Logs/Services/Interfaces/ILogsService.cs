@@ -1,7 +1,6 @@
-﻿namespace BackEnd.Aritmica.Features.Logs.Services.Interfaces
+﻿namespace BackEnd.Aritmica.Features.Logs.Services.Interfaces;
+public interface ILogsService
 {
-    public interface ILogsService
-    {
-        void SaveErrorLog(string message, string entity);
-    }
+    void SaveSucessLog(string message, string entity);
+    void SaveErrorLog(string message, string entity);
 }
